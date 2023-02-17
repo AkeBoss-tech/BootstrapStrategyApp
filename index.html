@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>1257 Strategy App</title>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+        <script src="m/jquery.min.js"></script>
+        <script src="m/qrcode.min.js"></script>
+        
+    </head>
+
+    <body>
+        <h1 id= "hero">Team 1257 Strategy App</h1> 
+        <form>
+            <!-- Prematch -->
+            <h2 class="form_section" style="font-size: 16px" id="prematch_heading"> Pre-Match</h2>
+            <div class="question_section">
+                <div class="question three-column">
+                    <label for="initials" class="form_label">Initials</label><br>
+                    <input type="text" id="initials" class="form_text_input"></input>
+                </div>
+                <!-- <br> -->
+        
+                <!-- <br> -->
+                <div class="question three-column">
+                    <label for="event" id="form_label" class="form_label">Event</label><br>
+                    <input type="text" id="event" class="form_text_input"></input>
+                </div>
+                <!-- <br> -->
+                
+                <!-- <br> -->
+                <div class="question three-column">
+                    <label for="match_id" id="form_label" class="form_label">Match</label><br>
+                    <input type="number" min="0" id="match_id" value="0" class="form_text_input"></input> <br>
+                </div>
+                <!-- <br> -->
+                
+                <!-- <br> -->
+                <div class="question two-column">
+                    <label for="tabletId" class="form_label">Tablet</label>
+                    <br>
+                    <input type="radio" id="a_button" name="tabletId" value="A">
+                    <label for="A">A</label><br>
+                    <input type="radio" id="b_button" name="tabletId" value="B">
+                    <label for="B">B</label><br>
+                    <input type="radio" id="c_button" name="tabletId" value="C">
+                    <label for="C">C</label><br>
+                    <input type="radio" id="d_button" name="tabletId" value="D">
+                    <label for="D">D</label><br>
+                    <input type="radio" id="e_button" name="tabletId" value="E">
+                    <label for="E">E</label><br>
+                    <input type="radio" id="f_button" name="tabletId" value="F">
+                    <label for="F">F</label><br>
+                    <input type="radio" id="g_button" name="tabletId" value="G">
+                    <label for="G">G</label><br>
+                     <input type="radio" id="h_button" name="tabletId" value="H">
+                    <label for="H">H</label><br>
+                    
+                </div>
+                
+                 <br>
+                <div class="question two-column">
+                    <label for="team_num" class="form_label">Team Number</label><br>
+                    <input type="number" min="0" id="team_num" value="1257" class="form_text_input"></input>
+                </div>
+
+                <div class="question two-column">
+                    <label for="preload" class="form_label">Preload</label><br>
+                    <input type="radio" id="cone_button" name="preload" value="Cone">
+                    <label for="Cone">Cone</label><br>
+                    <input type="radio" id="cube_button" name="preload" value="Cube">
+                    <label for="Cube">Cube</label><br>
+                    <input type="radio" id="none_button" name="preload" value="None">
+                    <label for="None">None</label><br>
+                </div>
+                
+            </div><br>
+            <div class="centered">
+                <a href="#autonomous_heading" class="button">Scroll</a>
+            </div>
+            
+            <!-- <br><br><br> -->
+            <h2 id= "autonomous_heading">Autonomous</h2>
+            <!-- <br> -->
+            <div class="question one-column" style="font-size: 16px">
+                <label for="cross" class="form_label">Cross (Yes = robot left red/blue taped area No = stayed in the area)</label>
+                <input type="checkbox" id="cross" checked="checked" class="form_text_input"></input>
+            </div>
+            <!-- <br>
+            <br> -->
+            <div class="question two-column">
+                <label for="auto_low_cone" class="form_label">Auto Low Cone</label>
+                <br>
+                <input type="button" onclick="incrementID('auto_low_cone', 1)" value="^" class="increaser"></input><br>
+                <input type="number" min="0" max="40" id="auto_low_cone" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('auto_low_cone', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="auto_mid_cone"  class="form_label">Auto Mid Cone</label><br>
+                <input type="button" onclick="incrementID('auto_mid_cone', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="auto_mid_cone" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('auto_mid_cone', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="auto_high_cone" class="form_label">Auto High Cone</label><br>
+                <input type="button" onclick="incrementID('auto_high_cone', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="auto_high_cone" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('auto_high_cone', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="auto_low_cube"  class="form_label">Auto Low Cube</label><br>
+                <input type="button" onclick="incrementID('auto_low_cube', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="auto_low_cube" value="0" class="form_text_input"></input> <br> 
+                <input type="button" onclick="incrementID('auto_low_cube', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="auto_mid_cube" class="form_label">Auto Mid Cube</label><br>
+                <input type="button" onclick="incrementID('auto_mid_cube', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="auto_mid_cube" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('auto_mid_cube', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="auto_high_cube"  class="form_label">Auto High Cube</label>
+                <br>
+                <input type="button" onclick="incrementID('auto_high_cube', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="auto_high_cube" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('auto_high_cube', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            
+            <div class="question one-column centered" style="text-align: left; padding: display table 0 35%;">
+                <label for="auto_position" class="form_label">Auto Final Position</label><br>
+                <input type="radio" id="auto_position" name="auto_position" value="Docked">
+                <label for="Docked">Docked</label><br>
+                <input type="radio" id="auto_position" name="auto_position" value="Engaged">
+                <label for="Engaged">Engaged</label><br>
+                 <input type="radio" id="auto_position" name="auto_position" value="Attempted to Dock">
+                <label for="Attempted to Dock ">Attempted to Dock </label><br>
+                <input type="radio" id="auto_position" name="auto_position" value="Attempted but failed">
+                 <label for="Attempted but failed ">Attempted but failed </label><br>
+                <input type="radio" id="auto_position" name="auto_position" value="Not Attempted">
+                
+                <label for="Not Attempted">Not Attempted</label><br><br>
+            </div>
+    
+            <!-- <br>
+            <br> -->
+            
+            
+            <!-- <br>
+            <br> -->
+            <br style="clear: both;"><br style="clear: both;">
+
+            <div class="centered">
+            <a href="#teleoperated_heading" class="button">Scroll</a>
+            </div>
+            <br style="clear: both;"><br>
+            <!-- Teleoperated -->
+            <h2 id= "teleoperated_heading">Teleoperated</h2>
+            <!-- <br> -->
+            <div class="question two-column" style="font-size: 16px">
+                <label for="tele_low_cone" class="form_label">Teleop Low Cone</label><br>
+                <input type="button" onclick="incrementID('tele_low_cone', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_low_cone" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_low_cone', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_mid_cone"  class="form_label">Teleop Mid Cone</label><br>
+                <input type="button" onclick="incrementID('tele_mid_cone', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_mid_cone" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_mid_cone', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_high_cone" class="form_label">Teleop High Cone</label><br>
+                <input type="button" onclick="incrementID('tele_high_cone', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_high_cone" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_high_cone', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_low_cube"  class="form_label">Teleop Low Cube</label><br>
+                <input type="button" onclick="incrementID('tele_low_cube', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_low_cube" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_low_cube', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_mid_cube" class="form_label">Teleop Mid Cube</label><br>
+                <input type="button" onclick="incrementID('tele_mid_cube', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_mid_cube" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_mid_cube', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_high_cube"  class="form_label">Teleop High Cube</label><br>
+                <input type="button" onclick="incrementID('tele_high_cube', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_high_cube" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_high_cube', -1)" value="⌄" class="increaser"></input> 
+            </div>
+
+            <!-- Dropped -->
+            <div class="question two-column">
+                <label for="tele_low_cone_drop" class="form_label">Teleop Low Cone Drop</label><br>
+                <input type="button" onclick="incrementID('tele_low_cone_drop', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_low_cone_drop" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_low_cone_drop', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_mid_cone_drop"  class="form_label">Teleop Mid Cone Drop</label><br>
+                <input type="button" onclick="incrementID('tele_mid_cone_drop', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_mid_cone_drop" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_mid_cone_drop', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_high_cone_drop" class="form_label">Teleop High Cone Drop</label><br>
+                <input type="button" onclick="incrementID('tele_high_cone_drop', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_high_cone_drop" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_high_cone_drop', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_low_cube_drop"  class="form_label">Teleop Low Cube Drop </label><br>
+                <input type="button" onclick="incrementID('tele_low_cube_drop', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_low_cube_drop" value="0" class="form_text_input"></type></input><br>
+                <input type="button" onclick="incrementID('tele_low_cube_drop', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_mid_cube_drop" class="form_label">Teleop Mid Cube Drop</label><br>
+                <input type="button" onclick="incrementID('tele_mid_cube_drop', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_mid_cube_drop" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_mid_cube_drop', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <div class="question two-column">
+                <label for="tele_high_cube_drop"  class="form_label">Teleop High Cube Drop</label><br>
+                <input type="button" onclick="incrementID('tele_high_cube_drop', 1)" value="^" class="increaser"></input> <br>
+                <input type="number" min="0" max="40" id="tele_high_cube_drop" value="0" class="form_text_input"></input> <br>
+                <input type="button" onclick="incrementID('tele_high_cube_drop', -1)" value="⌄" class="increaser"></input> <br>
+            </div>
+            <br style="clear: both;"><br style="clear: both;">
+            <div class="centered">
+                <a href="#endgame_heading" class="button">Scroll</a>
+            </div>
+            <br style="clear: both;"><br>
+            <!-- Endgame -->
+            <div>
+            <h2 id= "endgame_heading">Endgame</h2>
+    
+            <div class="question one-column centered" style="font-size: 16px; text-align: left; justify-content: center;">
+                <label for="end_charge_pos" class="form_label">End Position</label>
+                <br>
+                <input type="radio" id="end_charge_pos" name="end_charge_pos" value="DS">
+                <label for="low_button">Docked Solo</label><br>
+                <input type="radio" id="end_charge_pos" name="end_charge_pos" value="P">
+                <label for="high_button">Parked</label><br>
+                <input type="radio" id="end_charge_pos" name="end_charge_pos" value="ES">
+                <label for="C">Engaged Solo</label><br>
+                <input type="radio" id="end_charge_pos" name="end_charge_pos" value="DT">
+                <label for="D">Docked Together</label><br>
+                <input type="radio" id="end_charge_pos" name="end_charge_pos" value="ET">
+                <label for="E">Engaged Together</label><br> 
+                <input type="radio" id="end_charge_pos" name="end_charge_pos" value="N">
+                <label for="F">None</label><br><br>
+            </div>
+    
+            <!-- <br> -->
+            <!-- <br>
+            <br> -->
+                
+            <div class="question one-column">
+                <label for="notes" class="form_label">Notes</label><br>
+                <input type="text" id="notes" class="form_text_input"></input>
+            </div>
+                </div>
+            <br style="clear: both;"><br>
+            <div class="centered">
+                <input type="submit" style="text-align: center;" class="button"></input>
+            </div>
+            <br><br>
+            <div class="centered">
+                <a href="#data_heading" class="button">Scroll to Data</a>
+            </div>
+            <br>
+            
+        </form>
+        <br>
+        <div class="data" style="padding-inline-start: 15px;">
+            <br>
+            <h3 id="data_heading">Data</h3>
+            <div id="saved">Qr code below</div>
+            <div id="result">Qr code below</div>
+            <div id="resultant">Qr code below</div>
+            <div class="centered">
+                <a href="#prematch_heading" class="button">Back to Form</a>
+            </div>
+            <br>
+            <br><br style="clear: both;"><br>
+            <button onclick="clearData()" class="button">Clear</button>
+            One big qr code
+            <br><br style="clear: both;"><br>
+            
+            <div id="qrcode"></div>
+            <br>
+            <br>
+            List of Individual QR Codes
+            <ul id="qrList"></ul>
+        </div>
+        <script src="script.js"></script>
+     <!--
+      This script places a badge on your repl's full-browser view back to your repl's cover
+      page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+      teal, blue, blurple, magenta, pink!
+      -->
+        
+      <script src="https://replit.com/public/js/replit-badge.js" theme="dark" defer></script> 
+    </body>
+    <footer>
+        Made by Akash Dubey and Arav Sachdeva
+    </footer>
+</html>
