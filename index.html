@@ -35,6 +35,14 @@
             .green {
                 color: #1fcf00;
             }
+
+            #qrcode img {
+                width: 90%;
+            }
+
+            #qrList img {
+                width: 90%;
+            }
         </style>
     </head>
 
@@ -377,9 +385,9 @@
         <div class="container bg-dark text-white" id="data_container" style="padding-inline-start: 15px;">
             <br>
             <h3 id="data_heading">Data</h3>
-            <div id="saved">Qr code below</div>
-            <div id="result">Qr code below</div>
-            <div id="resultant">Qr code below</div>
+            <p id="saved" style="overflow-wrap: break-word">Qr code below</p>
+            <p id="result" style="overflow-wrap: break-word">Qr code below</p>
+            <p id="resultant" style="overflow-wrap: break-word">Qr code below</p>
             <div class="centered">
                 <button type="button" onClick="document.getElementById('prematch_heading').scrollIntoView();" class="btn btn-info">Back to Form</button>
             </div>
