@@ -157,6 +157,7 @@ form.addEventListener('submit', (event) => {
         parseInt(form.elements["tele_high_cube_drop"].value),
         
         form.elements["end_charge_pos"].value,
+        form.elements["malfunction"].value,
         
         form.elements["notes"].value,
     ])
