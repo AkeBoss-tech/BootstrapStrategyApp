@@ -1,63 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width">
-      <title>1257 Strategy App</title>
-      <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
-        <script src="m/jquery.min.js"></script>
-        <script src="m/qrcode.min.js"></script>
-        
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            [class*="col"] {
-                padding-top: 10px;
-                padding-bottom: 10px;
-                border: 1px solid white;
-                text-align: center;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>1257 Strategy App</title>
+    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
+    <script src="m/jquery.min.js"></script>
+    <script src="m/qrcode.min.js"></script>
 
-            .centered {
-                text-align: center;
-            }
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        [class*="col"] {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: 1px solid white;
+            text-align: center;
+        }
 
-            #hero {
-                text-align: center;
-                /* color: #1fcf00; */
-            }
+        .centered {
+            text-align: center;
+        }
 
-            h2 {
-                text-align: center;
-                color: #ff52f9;
-            }
+        #hero {
+            text-align: center;
+            /* color: #1fcf00; */
+        }
 
-            .green {
-                color: #1fcf00;
-            }
+        h2 {
+            text-align: center;
+            color: #ff52f9;
+        }
 
-            #qrcode img {
-                width: 90%;
-            }
+        .green {
+            color: #1fcf00;
+        }
 
-            #qrList img {
-                width: 90%;
-            }
-        </style>
-    </head>
+        #qrcode img {
+            width: 90%;
+        }
 
-    <body class = "bg-dark">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-              <a class="navbar-brand" href="#">
-                <img
-                  src="m/snail_logo.png"
-                  alt="1257 Logo"
-                  width="50"
-                  height="30"
-                />  Parallel Universe</a
-              >
-              <!-- <button
+        #qrList img {
+            width: 90%;
+        }
+
+        .purple-btn {
+            background-color: #ff52f9;
+            border-color: white;
+        }
+
+        .purple-btn:hover {
+            background-color: #bb3cb7;
+            border-color: white;
+        }
+
+        .purple-btn:active {
+            background-color: #9e0499;
+            border-color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="m/snail_logo.png" alt="1257 Logo" width="50" height="30" /> Parallel Universe</a>
+            <!-- <button
                 class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -68,28 +77,29 @@
               >
                 <span class="navbar-toggler-icon"></span>
               </button> -->
-              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#prematch_heading">Form<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#data_heading">Data</a>
-                    </li>
-                  </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#prematch_heading">Form<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#data_heading">Data</a>
+                        </li>
+                    </ul>
                 </div>
-              </nav>
-            </div>
-          </nav><!-- 
+            </nav>
+        </div>
+    </nav><!-- 
         <h1 id= "hero">Team 1257 Strategy App</h1>  -->
-        <form>
-            <div class="container bg-dark text-white" id="form_container">
+    <form>
+        <div class="container bg-dark text-white" id="form_container">
             <!-- Prematch -->
-            <h1 id= "hero">Team 1257 Strategy App</h1>
+            <h1 id="hero">Team 1257 Strategy App</h1>
             <h2 class="form_section" id="prematch_heading"> Pre-Match</h2>
             <div class="row">
                 <div class="col">
@@ -97,18 +107,18 @@
                     <input type="text" id="initials" class="form_text_input"></input>
                 </div>
                 <!-- <br> -->
-        
+
                 <!-- <br> -->
                 <div class="col">
                     <label for="event" id="form_label" class="form_label">Event</label><br>
                     <input type="text" id="event" class="form_text_input"></input>
                 </div>
                 <!-- <br> -->
-                
+
                 <!-- <br> -->
                 <div class="col">
                     <label for="match_id" id="form_label" class="form_label">Match</label><br>
-                    <input type="number" min="0" id="match_id" value="0" class="form_text_input"></input> <br>
+                    <input type="number" min="0" id="match_id" value="0" class="form_text_input p-2"></input> <br>
                 </div>
                 <!-- <br> -->
             </div>
@@ -132,12 +142,12 @@
                     <label for="F">F</label><br>
                     <input type="radio" id="g_button" name="tabletId" value="G">
                     <label for="G">G</label><br>
-                     <input type="radio" id="h_button" name="tabletId" value="H">
+                    <input type="radio" id="h_button" name="tabletId" value="H">
                     <label for="H">H</label><br>
-                    
+
                 </div>
-                
-                 <br>
+
+                <br>
                 <div class="col">
                     <label for="team_num" class="form_label">Team Number</label><br>
                     <input type="number" min="0" id="team_num" value="1257" class="form_text_input"></input>
@@ -152,18 +162,20 @@
                     <input type="radio" id="none_button" name="preload" value="None">
                     <label for="None">None</label><br>
                 </div>
-                
+
             </div><br>
             <div class="centered">
-                <button type="button" onClick="document.getElementById('autonomous_heading').scrollIntoView();" class="btn btn-info">Scroll</button>
+                <button type="button" onClick="document.getElementById('autonomous_heading').scrollIntoView();"
+                    class="btn btn-info">Scroll</button>
             </div>
-            
+
             <br><br>
-            <h2 id= "autonomous_heading">Autonomous</h2>
+            <h2 id="autonomous_heading">Autonomous</h2>
             <!-- <br> -->
             <div class="row">
                 <div class="col" style="font-size: 16px">
-                    <label for="cross" class="form_label">Cross (Yes = robot left red/blue taped area No = stayed in the area)</label>
+                    <label for="cross" class="form_label">Cross (Yes = robot left red/blue taped area No = stayed in the
+                        area)</label>
                     <input type="checkbox" id="cross" checked="checked" class="form_text_input"></input>
                 </div>
             </div>
@@ -172,65 +184,91 @@
             <div class="row">
                 <div class="col">
                     <label for="auto_high_cone" class="form_label">Auto High Cone</label><br>
-                    <input type="button" onclick="incrementID('auto_high_cone', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="auto_high_cone" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('auto_high_cone', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('auto_high_cone', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="auto_high_cone" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('auto_high_cone', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
-                    <label for="auto_high_cube"  class="form_label">Auto High Cube</label>
+                    <label for="auto_high_cube" class="form_label">Auto High Cube</label>
                     <br>
-                    <input type="button" onclick="incrementID('auto_high_cube', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="auto_high_cube" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('auto_high_cube', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('auto_high_cube', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="auto_high_cube" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('auto_high_cube', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
-                
+
             </div>
             <div class="row">
                 <div class="col">
-                    <label for="auto_mid_cone"  class="form_label">Auto Mid Cone</label><br>
-                    <input type="button" onclick="incrementID('auto_mid_cone', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="auto_mid_cone" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('auto_mid_cone', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <label for="auto_mid_cone" class="form_label">Auto Mid Cone</label><br>
+                    <input type="button" onclick="incrementID('auto_mid_cone', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="auto_mid_cone" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('auto_mid_cone', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
-            
+
                 <div class="col">
                     <label for="auto_mid_cube" class="form_label">Auto Mid Cube</label><br>
-                    <input type="button" onclick="incrementID('auto_mid_cube', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="auto_mid_cube" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('auto_mid_cube', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('auto_mid_cube', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="auto_mid_cube" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('auto_mid_cube', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="auto_low_cone" class="form_label">Auto Low Cone</label>
                     <br>
-                    <input type="button" onclick="incrementID('auto_low_cone', 1)" value="^" class="btn btn-success"></input><br>
-                    <input type="number" min="0" max="40" id="auto_low_cone" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('auto_low_cone', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('auto_low_cone', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input><br>
+                    <input type="number" min="0" max="40" id="auto_low_cone" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('auto_low_cone', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
-                
+
                 <div class="col">
-                    <label for="auto_low_cube"  class="form_label">Auto Low Cube</label><br>
-                    <input type="button" onclick="incrementID('auto_low_cube', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="auto_low_cube" value="0" class="form_text_input"></input> <br> 
-                    <input type="button" onclick="incrementID('auto_low_cube', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <label for="auto_low_cube" class="form_label">Auto Low Cube</label><br>
+                    <input type="button" onclick="incrementID('auto_low_cube', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="auto_low_cube" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('auto_low_cube', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col">
                     <label for="auto_position" class="form_label">Auto Final Position</label><br>
-                    <input type="radio" id="auto_position" name="auto_position" value="Docked">
-                    <label for="Docked">Docked</label><br>
-                    <input type="radio" id="auto_position" name="auto_position" value="Engaged">
-                    <label for="Engaged">Engaged</label><br>
-                     <input type="radio" id="auto_position" name="auto_position" value="Attempted to Dock">
-                    <label for="Attempted to Dock ">Attempted to Dock </label><br>
-                    <input type="radio" id="auto_position" name="auto_position" value="Attempted but failed">
-                     <label for="Attempted but failed ">Attempted but failed </label><br>
-                    <input type="radio" id="auto_position" name="auto_position" value="Not Attempted">
-                    
-                    <label for="Not Attempted">Not Attempted</label><br><br>
+
+                    <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active purple-btn">
+                            <input type="radio" class="btn-check" id="auto_position1" name="auto_position"
+                                value="Docked" autocomplete="off" checked>Docked
+                        </label>
+
+                        <label class="btn btn-primary purple-btn" for="auto_position2"><input type="radio" id="auto_position2"
+                                name="auto_position" value="Engaged">Engaged</label>
+
+                        <label class="btn btn-primary purple-btn" for="auto_position3"><input type="radio" id="auto_position3"
+                                name="auto_position" value="Attempted to Dock">Attempted to Dock </label>
+
+                        <label class="btn btn-primary purple-btn" for="auto_position4"><input type="radio" id="auto_position4"
+                                name="auto_position" value="Attempted but failed">Attempted but failed </label>
+
+                        <label class="btn btn-primary purple-btn" for="auto_position5"><input type="radio" id="auto_position5"
+                                name="auto_position" value="Not Attempted">Not Attempted</label>
+                    </div>
                 </div>
             </div>
             <!-- <br>
@@ -240,101 +278,139 @@
             <br style="clear: both;">
 
             <div class="centered">
-                <button type="button" onClick="document.getElementById('teleoperated_heading').scrollIntoView();" class="btn btn-info">Scroll</button>
+                <button type="button" onClick="document.getElementById('teleoperated_heading').scrollIntoView();"
+                    class="btn btn-info">Scroll</button>
             </div>
             <br style="clear: both;"><br>
             <!-- Teleoperated -->
-            <h2 id= "teleoperated_heading">Teleoperated</h2>
+            <h2 id="teleoperated_heading">Teleoperated</h2>
             <!-- <br> -->
             <div class="row">
                 <div class="col">
                     <label for="tele_high_cone" class="form_label">Teleop High Cone</label><br>
-                    <input type="button" onclick="incrementID('tele_high_cone', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_high_cone" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_high_cone', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('tele_high_cone', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_high_cone" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_high_cone', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
-                    <label for="tele_high_cube"  class="form_label">Teleop High Cube</label><br>
-                    <input type="button" onclick="incrementID('tele_high_cube', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_high_cube" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_high_cube', -1)" value="⌄" class="btn btn-success"></input> 
+                    <label for="tele_high_cube" class="form_label">Teleop High Cube</label><br>
+                    <input type="button" onclick="incrementID('tele_high_cube', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_high_cube" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_high_cube', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input>
                 </div>
                 <div class="col">
                     <label for="tele_high_cone_drop" class="form_label">Teleop High Cone Drop</label><br>
-                    <input type="button" onclick="incrementID('tele_high_cone_drop', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_high_cone_drop" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_high_cone_drop', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('tele_high_cone_drop', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_high_cone_drop" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_high_cone_drop', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
-                    <label for="tele_high_cube_drop"  class="form_label">Teleop High Cube Drop</label><br>
-                    <input type="button" onclick="incrementID('tele_high_cube_drop', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_high_cube_drop" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_high_cube_drop', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <label for="tele_high_cube_drop" class="form_label">Teleop High Cube Drop</label><br>
+                    <input type="button" onclick="incrementID('tele_high_cube_drop', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_high_cube_drop" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_high_cube_drop', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <label for="tele_mid_cone"  class="form_label">Teleop Mid Cone</label><br>
-                    <input type="button" onclick="incrementID('tele_mid_cone', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_mid_cone" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_mid_cone', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <label for="tele_mid_cone" class="form_label">Teleop Mid Cone</label><br>
+                    <input type="button" onclick="incrementID('tele_mid_cone', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_mid_cone" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_mid_cone', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
                     <label for="tele_mid_cube" class="form_label">Teleop Mid Cube</label><br>
-                    <input type="button" onclick="incrementID('tele_mid_cube', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_mid_cube" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_mid_cube', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('tele_mid_cube', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_mid_cube" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_mid_cube', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
-                    <label for="tele_mid_cone_drop"  class="form_label">Teleop Mid Cone Drop</label><br>
-                    <input type="button" onclick="incrementID('tele_mid_cone_drop', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_mid_cone_drop" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_mid_cone_drop', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <label for="tele_mid_cone_drop" class="form_label">Teleop Mid Cone Drop</label><br>
+                    <input type="button" onclick="incrementID('tele_mid_cone_drop', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_mid_cone_drop" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_mid_cone_drop', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
                     <label for="tele_mid_cube_drop" class="form_label">Teleop Mid Cube Drop</label><br>
-                    <input type="button" onclick="incrementID('tele_mid_cube_drop', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_mid_cube_drop" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_mid_cube_drop', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('tele_mid_cube_drop', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_mid_cube_drop" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_mid_cube_drop', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
             </div>
             <div class="row">
                 <div class="col" style="font-size: 16px">
                     <label for="tele_low_cone" class="form_label">Teleop Low Cone</label><br>
-                    <input type="button" onclick="incrementID('tele_low_cone', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_low_cone" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_low_cone', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('tele_low_cone', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_low_cone" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_low_cone', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
-                    <label for="tele_low_cube"  class="form_label">Teleop Low Cube</label><br>
-                    <input type="button" onclick="incrementID('tele_low_cube', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_low_cube" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_low_cube', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <label for="tele_low_cube" class="form_label">Teleop Low Cube</label><br>
+                    <input type="button" onclick="incrementID('tele_low_cube', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_low_cube" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_low_cube', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <!-- Dropped -->
                 <div class="col">
                     <label for="tele_low_cone_drop" class="form_label">Teleop Low Cone Drop</label><br>
-                    <input type="button" onclick="incrementID('tele_low_cone_drop', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_low_cone_drop" value="0" class="form_text_input"></input> <br>
-                    <input type="button" onclick="incrementID('tele_low_cone_drop', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <input type="button" onclick="incrementID('tele_low_cone_drop', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_low_cone_drop" value="0"
+                        class="form_text_input p-2"></input> <br>
+                    <input type="button" onclick="incrementID('tele_low_cone_drop', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
                 <div class="col">
-                    <label for="tele_low_cube_drop"  class="form_label">Teleop Low Cube Drop </label><br>
-                    <input type="button" onclick="incrementID('tele_low_cube_drop', 1)" value="^" class="btn btn-success"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_low_cube_drop" value="0" class="form_text_input"></type></input><br>
-                    <input type="button" onclick="incrementID('tele_low_cube_drop', -1)" value="⌄" class="btn btn-success"></input> <br>
+                    <label for="tele_low_cube_drop" class="form_label">Teleop Low Cube Drop </label><br>
+                    <input type="button" onclick="incrementID('tele_low_cube_drop', 1)" value="^"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
+                    <input type="number" min="0" max="40" id="tele_low_cube_drop" value="0" class="form_text_input p-2">
+                    </type></input><br>
+                    <input type="button" onclick="incrementID('tele_low_cube_drop', -1)" value="⌄"
+                        class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
             </div>
-            
+
             <br style="clear: both;">
             <div class="centered">
-                <button type="button" onClick="document.getElementById('endgame_heading').scrollIntoView();" class="btn btn-info">Scroll</button>
+                <button type="button" onClick="document.getElementById('endgame_heading').scrollIntoView();"
+                    class="btn btn-info">Scroll</button>
             </div>
             <br style="clear: both;"><br>
             <!-- Endgame -->
-            
-            <h2 id= "endgame_heading">Endgame</h2>
-    
+
+            <h2 id="endgame_heading">Endgame</h2>
+
             <div class="row">
                 <div class="col">
                     <label for="end_charge_pos" class="form_label">End Position</label>
@@ -348,12 +424,12 @@
                     <input type="radio" id="end_charge_pos" name="end_charge_pos" value="DT">
                     <label for="D">Docked Together</label><br>
                     <input type="radio" id="end_charge_pos" name="end_charge_pos" value="ET">
-                    <label for="E">Engaged Together</label><br> 
+                    <label for="E">Engaged Together</label><br>
                     <input type="radio" id="end_charge_pos" name="end_charge_pos" value="N">
                     <label for="F">None</label><br>
                 </div>
             </div>
-    
+
             <!-- <br> -->
             <!-- <br>
             <br> -->
@@ -363,7 +439,7 @@
                     <input type="checkbox" id="malfunction" unchecked class="form_text_input"></input>
                 </div>
             </div>
-                
+
             <div class="row">
                 <div class="col">
                     <label for="notes" class="form_label">Notes</label><br>
@@ -376,48 +452,51 @@
             </div>
             <br><br>
             <div class="centered">
-                <button type="button" onClick="document.getElementById('data_heading').scrollIntoView()" class="btn btn-info">Scroll to Data</button>
+                <button type="button" onClick="document.getElementById('data_heading').scrollIntoView()"
+                    class="btn btn-info">Scroll to Data</button>
             </div>
             <br>
-            </div>
-        </form>
-        <br>
-        <div class="container bg-dark text-white" id="data_container" style="padding-inline-start: 15px;">
-            <br>
-            <h3 id="data_heading">Data</h3>
-            <p id="saved" style="overflow-wrap: break-word">Qr code below</p>
-            <p id="result" style="overflow-wrap: break-word">Qr code below</p>
-            <p id="resultant" style="overflow-wrap: break-word">Qr code below</p>
-            <div class="centered">
-                <button type="button" onClick="document.getElementById('prematch_heading').scrollIntoView();" class="btn btn-info">Back to Form</button>
-            </div>
-            <br><br>
-            <div class="centered">
-                <button onclick="clearData()" class="btn btn-danger">Clear</button>
-            </div>
-            <br><br style="clear: both;"><br>
-            <p>Large QR Code</p>
-            
-            <div id="qrcode"></div>
-            <br>
-            <br>
-            Individual QR Codes
-            <br>
-            <ul id="qrList"></ul>
         </div>
-        <script src="script.js"></script>
-     <!--
+    </form>
+    <br>
+    <div class="container bg-dark text-white" id="data_container" style="padding-inline-start: 15px;">
+        <br>
+        <h3 id="data_heading">Data</h3>
+        <p id="saved" style="overflow-wrap: break-word">Qr code below</p>
+        <p id="result" style="overflow-wrap: break-word">Qr code below</p>
+        <p id="resultant" style="overflow-wrap: break-word">Qr code below</p>
+        <div class="centered">
+            <button type="button" onClick="document.getElementById('prematch_heading').scrollIntoView();"
+                class="btn btn-info">Back to Form</button>
+        </div>
+        <br><br>
+        <div class="centered">
+            <button onclick="clearData()" class="btn btn-danger">Clear</button>
+        </div>
+        <br><br style="clear: both;"><br>
+        <p>Large QR Code</p>
+
+        <div id="qrcode"></div>
+        <br>
+        <br>
+        Individual QR Codes
+        <br>
+        <ul id="qrList"></ul>
+    </div>
+    <script src="script.js"></script>
+    <!--
       This script places a badge on your repl's full-browser view back to your repl's cover
       page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
       teal, blue, blurple, magenta, pink!
       -->
-      <script src="js/bootstrap.min.js"></script>
-      <!-- <script src="https://replit.com/public/js/replit-badge.js" theme="dark" defer></script>  -->
-    </body>
-    <footer>
-        <div class="container bg-dark centered green">
-            <br></br>
-            <p>Made by Akash Dubey and Arav Sachdeva</p>
-        </div>
-    </footer>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <script src="https://replit.com/public/js/replit-badge.js" theme="dark" defer></script>  -->
+</body>
+<footer>
+    <div class="container bg-dark centered green">
+        <br></br>
+        <p>Made by Akash Dubey and Arav Sachdeva</p>
+    </div>
+</footer>
+
 </html>

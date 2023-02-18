@@ -27,7 +27,7 @@ if (localStorage.getItem("initials") === null) {
     text += localStorage.getItem("initials")
 }
 
-if (localStorage.getItem("tablet") === null) {
+if (localStorage.getItem("tablet") === null || localStorage.getItem("tablet") === "") {
     localStorage.setItem("tablet", "") 
 } else {
     // document.getElementById("tabletId").value = localStorage.getItem("tablet");
@@ -43,7 +43,7 @@ if (localStorage.getItem("event") === null) {
     text += localStorage.getItem("event")
 }
 
-if (localStorage.getItem("match") === null) {
+if (localStorage.getItem("match") === null || localStorage.getItem("match") === "") {
     localStorage.setItem("match", "") 
 } else {
     document.getElementById("match_id").value = parseInt(localStorage.getItem("match")) + 1;
