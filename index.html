@@ -36,12 +36,25 @@
             color: #1fcf00;
         }
 
-        #qrcode img {
-            width: 90%;
-        }
+        @media (orientation: portrait) {
+            #qrcode img {
+                width: 90%;
+            }
 
-        #qrList img {
-            width: 90%;
+            #qrList img {
+                width: 90%;
+            }
+        }
+        
+        @media (orientation: landscape) {
+            #qrcode img {
+                height: 80vh;
+                
+            }
+
+            #qrList img {
+                height: 80vh;
+            }
         }
 
         .purple-btn {
@@ -58,6 +71,7 @@
             background-color: #9e0499;
             border-color: white;
         }
+
     </style>
 </head>
 
@@ -128,22 +142,33 @@
                 <div class="col">
                     <label for="tabletId" class="form_label">Tablet</label>
                     <br>
-                    <input type="radio" id="a_button" name="tabletId" value="A">
-                    <label for="A">A</label><br>
-                    <input type="radio" id="b_button" name="tabletId" value="B">
-                    <label for="B">B</label><br>
-                    <input type="radio" id="c_button" name="tabletId" value="C">
-                    <label for="C">C</label><br>
-                    <input type="radio" id="d_button" name="tabletId" value="D">
-                    <label for="D">D</label><br>
-                    <input type="radio" id="e_button" name="tabletId" value="E">
-                    <label for="E">E</label><br>
-                    <input type="radio" id="f_button" name="tabletId" value="F">
-                    <label for="F">F</label><br>
-                    <input type="radio" id="g_button" name="tabletId" value="G">
-                    <label for="G">G</label><br>
-                    <input type="radio" id="h_button" name="tabletId" value="H">
-                    <label for="H">H</label><br>
+                    
+                    <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active purple-btn" for="a_button">
+                            <input type="radio" class="btn-check" id="a_button" name="tabletId" value="A" autocomplete="off" checked>A
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="b_button">
+                            <input type="radio" class="btn-check" id="b_button" name="tabletId" value="B" autocomplete="off">B
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="c_button">
+                            <input type="radio" class="btn-check" id="c_button" name="tabletId" value="C" autocomplete="off">C
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="d_button">
+                            <input type="radio" class="btn-check" id="d_button" name="tabletId" value="D" autocomplete="off">D
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="e_button">
+                            <input type="radio" class="btn-check" id="e_button" name="tabletId" value="E" autocomplete="off">E
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="f_button">
+                            <input type="radio" class="btn-check" id="f_button" name="tabletId" value="F" autocomplete="off">F
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="g_button">
+                            <input type="radio" class="btn-check" id="g_button" name="tabletId" value="G" autocomplete="off">G
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="h_button">
+                            <input type="radio" class="btn-check" id="h_button" name="tabletId" value="H" autocomplete="off">H
+                        </label>
+                    </div>
 
                 </div>
 
@@ -155,12 +180,17 @@
 
                 <div class="col">
                     <label for="preload" class="form_label">Preload</label><br>
-                    <input type="radio" id="cone_button" name="preload" value="Cone">
-                    <label for="Cone">Cone</label><br>
-                    <input type="radio" id="cube_button" name="preload" value="Cube">
-                    <label for="Cube">Cube</label><br>
-                    <input type="radio" id="none_button" name="preload" value="None">
-                    <label for="None">None</label><br>
+                    <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active purple-btn" for="cone_button">
+                            <input type="radio" class="btn-check" id="cone_button" name="preload" value="Cone" autocomplete="off" checked>Cone
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="cube_button">
+                            <input type="radio" class="btn-check" id="cube_button" name="preload" value="Cube" autocomplete="off">Cube
+                        </label>
+                        <label class="btn btn-primary purple-btn" for="none_button">
+                            <input type="radio" class="btn-check" id="none_button" name="preload" value="None" autocomplete="off">None
+                        </label>
+                    </div>
                 </div>
 
             </div><br>
@@ -413,20 +443,28 @@
 
             <div class="row">
                 <div class="col">
-                    <label for="end_charge_pos" class="form_label">End Position</label>
-                    <br>
-                    <input type="radio" id="end_charge_pos" name="end_charge_pos" value="DS">
-                    <label for="low_button">Docked Solo</label><br>
-                    <input type="radio" id="end_charge_pos" name="end_charge_pos" value="P">
-                    <label for="high_button">Parked</label><br>
-                    <input type="radio" id="end_charge_pos" name="end_charge_pos" value="ES">
-                    <label for="C">Engaged Solo</label><br>
-                    <input type="radio" id="end_charge_pos" name="end_charge_pos" value="DT">
-                    <label for="D">Docked Together</label><br>
-                    <input type="radio" id="end_charge_pos" name="end_charge_pos" value="ET">
-                    <label for="E">Engaged Together</label><br>
-                    <input type="radio" id="end_charge_pos" name="end_charge_pos" value="N">
-                    <label for="F">None</label><br>
+                    <label for="end_charge_pos" class="form_label">End Position</label><br>
+                    <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active purple-btn">
+                            <input type="radio" class="btn-check" id="end_charge_pos1" name="end_charge_pos"
+                                value="DS" autocomplete="off" checked>Docked Solo
+                        </label>
+
+                        <label class="btn btn-primary purple-btn" for="end_charge_pos2"><input type="radio" id="end_charge_pos2"
+                                name="end_charge_pos" value="P">Parked</label>
+
+                        <label class="btn btn-primary purple-btn" for="end_charge_pos3"><input type="radio" id="end_charge_pos3"
+                                name="end_charge_pos" value="ES">Engaged Solo</label>
+
+                        <label class="btn btn-primary purple-btn" for="end_charge_pos4"><input type="radio" id="end_charge_pos4"
+                                name="end_charge_pos" value="DT">Docked Together</label>
+
+                        <label class="btn btn-primary purple-btn" for="end_charge_pos5"><input type="radio" id="end_charge_pos5"
+                                name="end_charge_pos" value="ET">Engaged Together</label>
+
+                        <label class="btn btn-primary purple-btn" for="end_charge_pos6"><input type="radio" id="end_charge_pos6"
+                            name="end_charge_pos" value="F">None</label>
+                    </div>
                 </div>
             </div>
 
@@ -479,9 +517,9 @@
         <div id="qrcode"></div>
         <br>
         <br>
-        Individual QR Codes
+        <p>Individual QR Codes</p>
         <br>
-        <ul id="qrList"></ul>
+        <div id="qrList"></div>
     </div>
     <script src="script.js"></script>
     <!--
