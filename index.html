@@ -58,17 +58,20 @@
         }
 
         .purple-btn {
-            background-color: #ff52f9;
+            /* background-color: #ff52f9; */
+            background-color: #1fcf00;
             border-color: white;
         }
 
         .purple-btn:hover {
-            background-color: #bb3cb7;
+            /* background-color: #bb3cb7; */
+            background-color: #148500;
             border-color: white;
         }
 
-        .purple-btn:active {
-            background-color: #9e0499;
+        .purple-btn.active {
+            /* background-color: #1fcf00; */
+            background-color: #ff52f9;
             border-color: white;
         }
 
@@ -144,28 +147,28 @@
                     <br>
                     
                     <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary active purple-btn" for="a_button">
+                        <label class="btn active purple-btn" for="a_button">
                             <input type="radio" class="btn-check" id="a_button" name="tabletId" value="A" autocomplete="off" checked>A
                         </label>
-                        <label class="btn btn-primary purple-btn" for="b_button">
+                        <label class="btn purple-btn" for="b_button">
                             <input type="radio" class="btn-check" id="b_button" name="tabletId" value="B" autocomplete="off">B
                         </label>
-                        <label class="btn btn-primary purple-btn" for="c_button">
+                        <label class="btn purple-btn" for="c_button">
                             <input type="radio" class="btn-check" id="c_button" name="tabletId" value="C" autocomplete="off">C
                         </label>
-                        <label class="btn btn-primary purple-btn" for="d_button">
+                        <label class="btn purple-btn" for="d_button">
                             <input type="radio" class="btn-check" id="d_button" name="tabletId" value="D" autocomplete="off">D
                         </label>
-                        <label class="btn btn-primary purple-btn" for="e_button">
+                        <label class="btn purple-btn" for="e_button">
                             <input type="radio" class="btn-check" id="e_button" name="tabletId" value="E" autocomplete="off">E
                         </label>
-                        <label class="btn btn-primary purple-btn" for="f_button">
+                        <label class="btn purple-btn" for="f_button">
                             <input type="radio" class="btn-check" id="f_button" name="tabletId" value="F" autocomplete="off">F
                         </label>
-                        <label class="btn btn-primary purple-btn" for="g_button">
+                        <label class="btn purple-btn" for="g_button">
                             <input type="radio" class="btn-check" id="g_button" name="tabletId" value="G" autocomplete="off">G
                         </label>
-                        <label class="btn btn-primary purple-btn" for="h_button">
+                        <label class="btn purple-btn" for="h_button">
                             <input type="radio" class="btn-check" id="h_button" name="tabletId" value="H" autocomplete="off">H
                         </label>
                     </div>
@@ -181,13 +184,13 @@
                 <div class="col">
                     <label for="preload" class="form_label">Preload</label><br>
                     <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary active purple-btn" for="cone_button">
+                        <label class="btn active purple-btn" for="cone_button">
                             <input type="radio" class="btn-check" id="cone_button" name="preload" value="Cone" autocomplete="off" checked>Cone <img src="m/cone.png" alt="Cone" height="30px">
                         </label>
-                        <label class="btn btn-primary purple-btn" for="cube_button">
+                        <label class="btn purple-btn" for="cube_button">
                             <input type="radio" class="btn-check" id="cube_button" name="preload" value="Cube" autocomplete="off">Cube <img src="m/cube.png" alt="Cone" height="30px">
                         </label>
-                        <label class="btn btn-primary purple-btn" for="none_button">
+                        <label class="btn purple-btn" for="none_button">
                             <input type="radio" class="btn-check" id="none_button" name="preload" value="None" autocomplete="off">None ❌
                         </label>
                     </div>
@@ -282,21 +285,21 @@
                     <label for="auto_position" class="form_label">Auto Final Position</label><br>
 
                     <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary active purple-btn">
+                        <label class="btn active purple-btn">
                             <input type="radio" class="btn-check" id="auto_position1" name="auto_position"
                                 value="Docked" autocomplete="off" checked>Docked
                         </label>
 
-                        <label class="btn btn-primary purple-btn" for="auto_position2"><input type="radio" id="auto_position2"
+                        <label class="btn purple-btn" for="auto_position2"><input type="radio" id="auto_position2"
                                 name="auto_position" value="Engaged">Engaged</label>
 
-                        <label class="btn btn-primary purple-btn" for="auto_position3"><input type="radio" id="auto_position3"
+                        <label class="btn purple-btn" for="auto_position3"><input type="radio" id="auto_position3"
                                 name="auto_position" value="Attempted to Dock">Attempted to Dock </label>
 
-                        <label class="btn btn-primary purple-btn" for="auto_position4"><input type="radio" id="auto_position4"
+                        <label class="btn purple-btn" for="auto_position4"><input type="radio" id="auto_position4"
                                 name="auto_position" value="Attempted but failed">Attempted but failed </label>
 
-                        <label class="btn btn-primary purple-btn" for="auto_position5"><input type="radio" id="auto_position5"
+                        <label class="btn purple-btn" for="auto_position5"><input type="radio" id="auto_position5"
                                 name="auto_position" value="Not Attempted">Not Attempted</label>
                     </div>
                 </div>
@@ -445,24 +448,24 @@
                 <div class="col">
                     <label for="end_charge_pos" class="form_label">End Position</label><br>
                     <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary active purple-btn">
+                        <label class="btn active purple-btn">
                             <input type="radio" class="btn-check" id="end_charge_pos1" name="end_charge_pos"
                                 value="DS" autocomplete="off" checked>Docked Solo
                         </label>
 
-                        <label class="btn btn-primary purple-btn" for="end_charge_pos2"><input type="radio" id="end_charge_pos2"
+                        <label class="btn purple-btn" for="end_charge_pos2"><input type="radio" id="end_charge_pos2"
                                 name="end_charge_pos" value="P">Parked</label>
 
-                        <label class="btn btn-primary purple-btn" for="end_charge_pos3"><input type="radio" id="end_charge_pos3"
+                        <label class="btn purple-btn" for="end_charge_pos3"><input type="radio" id="end_charge_pos3"
                                 name="end_charge_pos" value="ES">Engaged Solo</label>
 
-                        <label class="btn btn-primary purple-btn" for="end_charge_pos4"><input type="radio" id="end_charge_pos4"
+                        <label class="btn purple-btn" for="end_charge_pos4"><input type="radio" id="end_charge_pos4"
                                 name="end_charge_pos" value="DT">Docked Together</label>
 
-                        <label class="btn btn-primary purple-btn" for="end_charge_pos5"><input type="radio" id="end_charge_pos5"
+                        <label class="btn purple-btn" for="end_charge_pos5"><input type="radio" id="end_charge_pos5"
                                 name="end_charge_pos" value="ET">Engaged Together</label>
 
-                        <label class="btn btn-primary purple-btn" for="end_charge_pos6"><input type="radio" id="end_charge_pos6"
+                        <label class="btn purple-btn" for="end_charge_pos6"><input type="radio" id="end_charge_pos6"
                             name="end_charge_pos" value="F">None</label>
                     </div>
                 </div>
