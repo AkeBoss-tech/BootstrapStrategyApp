@@ -133,7 +133,7 @@ form.addEventListener('submit', (event) => {
         // Game specefic
         // auto
         form.elements["preload"].value,
-        form.elements["cross"].value,
+        form.elements["cross"].checked,
         parseInt(form.elements["auto_low_cone"].value),
         parseInt(form.elements["auto_mid_cone"].value),
         parseInt(form.elements["auto_high_cone"].value),
@@ -157,7 +157,7 @@ form.addEventListener('submit', (event) => {
         parseInt(form.elements["tele_high_cube_drop"].value),
         
         form.elements["end_charge_pos"].value,
-        form.elements["malfunction"].value,
+        form.elements["malfunction"].checked,
         
         form.elements["notes"].value,
     ])
