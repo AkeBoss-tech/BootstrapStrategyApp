@@ -155,11 +155,9 @@ form.addEventListener('submit', (event) => {
         parseInt(form.elements["tele_low_cube_drop"].value),
         parseInt(form.elements["tele_mid_cube_drop"].value),
         parseInt(form.elements["tele_high_cube_drop"].value),
-        
         form.elements["end_charge_pos"].value,
-        form.elements["malfunction"].checked.toString(),
-        
         form.elements["notes"].value,
+        form.elements["malfunction"].checked.toString(),
     ])
 
     console.log(myList)
