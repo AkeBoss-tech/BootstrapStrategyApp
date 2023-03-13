@@ -1,0 +1,66 @@
+
+[class*="col"] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
+}
+
+#hero {
+    text-align: center;
+    /* color: #1fcf00; */
+}
+
+h2 {
+    text-align: center;
+    color: #ff52f9;
+}
+
+.green {
+    color: #1fcf00;
+}
+
+@media (orientation: portrait) {
+    #qrcode img {
+        width: 90%;
+    }
+
+    #qrList img {
+        width: 90%;
+    }
+}
+
+@media (orientation: landscape) {
+    #qrcode img {
+        height: 80vh;
+        
+    }
+
+    #qrList img {
+        height: 80vh;
+    }
+}
+
+.purple-btn {
+    /* background-color: #ff52f9; */
+    background-color: #1fcf00;
+    border-color: white;
+    color: white;
+    font-weight: bold;
+}
+
+.purple-btn:hover {
+    /* background-color: #bb3cb7; */
+    background-color: #148500;
+    border-color: white;
+}
+
+.purple-btn.active {
+    /* background-color: #1fcf00; */
+    background-color: #ff52f9;
+    border-color: white;
+}
