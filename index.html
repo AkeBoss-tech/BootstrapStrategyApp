@@ -63,14 +63,19 @@
                 <!-- <br> -->
                 <div class="col">
                     <label for="event" id="form_label" class="form_label">Event</label><br>
-                    <input type="text" id="event" class="form_text_input"></input>
+                    <select id="event" name="event" style="width: 200px; height: 40px; font-size: 14pt;">
+                        <option value="training">Training</option>
+                        <option value="robbinsville">Robbinsville</option>
+                        <option value="montgomery">Montgomery</option>
+                        <option value="dcmp">DCMP</option>
+                    </select>
                 </div>
                 <!-- <br> -->
 
                 <!-- <br> -->
                 <div class="col">
                     <label for="match_id" id="form_label" class="form_label">Match</label><br>
-                    <input type="number" min="0" id="match_id" value="0" class="form_text_input p-2" pattern="/^\d+$/;"></input> <br>
+                    <input type="number" min="0" id="match_id" value="0" class="form_text_input p-2" pattern="[0-9]"></input> <br>
                 </div>
                 <!-- <br> -->
             </div>
@@ -113,7 +118,7 @@
                 <br>
                 <div class="col">
                     <label for="team_num" class="form_label">Team Number</label><br>
-                    <input type="number" min="0" id="team_num" value="1257" class="form_text_input" pattern="^[0-9]*$"></input>
+                    <input type="number" min="0" id="team_num" value="1257" class="form_text_input" pattern="[0-9]"></input>
                 </div>
 
                 <div class="col">
@@ -413,7 +418,7 @@
             <div class="row">
                 <div class="col">
                     <label for="notes" class="form_label">Notes</label><br>
-                    <input type="text" id="notes" class="form_text_input"></input>
+                    <textarea type="text" id="notes" class="form_text_input" style="width: 80%; height: 100px;"></textarea>
                 </div>
             </div> 
             <div class="row">
