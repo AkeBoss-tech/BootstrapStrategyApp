@@ -64,3 +64,11 @@ h2 {
     background-color: #ff52f9;
     border-color: white;
 }
+
+#cross {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    left: 5px;
+    top: 9px;
+}
