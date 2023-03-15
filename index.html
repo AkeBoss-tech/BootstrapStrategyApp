@@ -10,74 +10,7 @@
     <script src="m/qrcode.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-        [class*="col"] {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border: 1px solid white;
-            text-align: center;
-        }
-
-        .centered {
-            text-align: center;
-        }
-
-        #hero {
-            text-align: center;
-            /* color: #1fcf00; */
-        }
-
-        h2 {
-            text-align: center;
-            color: #ff52f9;
-        }
-
-        .green {
-            color: #1fcf00;
-        }
-
-        @media (orientation: portrait) {
-            #qrcode img {
-                width: 90%;
-            }
-
-            #qrList img {
-                width: 90%;
-            }
-        }
-        
-        @media (orientation: landscape) {
-            #qrcode img {
-                height: 80vh;
-                
-            }
-
-            #qrList img {
-                height: 80vh;
-            }
-        }
-
-        .purple-btn {
-            /* background-color: #ff52f9; */
-            background-color: #1fcf00;
-            border-color: white;
-            color: white;
-            font-weight: bold;
-        }
-
-        .purple-btn:hover {
-            /* background-color: #bb3cb7; */
-            background-color: #148500;
-            border-color: white;
-        }
-
-        .purple-btn.active {
-            /* background-color: #1fcf00; */
-            background-color: #ff52f9;
-            border-color: white;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-dark">
@@ -137,7 +70,7 @@
                 <!-- <br> -->
                 <div class="col">
                     <label for="match_id" id="form_label" class="form_label">Match</label><br>
-                    <input type="number" min="0" id="match_id" value="0" class="form_text_input p-2"></input> <br>
+                    <input type="number" min="0" id="match_id" value="0" class="form_text_input p-2" pattern="/^\d+$/;"></input> <br>
                 </div>
                 <!-- <br> -->
             </div>
@@ -180,7 +113,7 @@
                 <br>
                 <div class="col">
                     <label for="team_num" class="form_label">Team Number</label><br>
-                    <input type="number" min="0" id="team_num" value="1257" class="form_text_input"></input>
+                    <input type="number" min="0" id="team_num" value="1257" class="form_text_input" pattern="^[0-9]*$"></input>
                 </div>
 
                 <div class="col">
@@ -208,7 +141,7 @@
             <h2 id="autonomous_heading">Autonomous</h2>
             <!-- <br> -->
             <div class="row">
-                <div class="col" style="font-size: 16px">
+                <div class="col" style="font-size: 24px">
                     <label for="cross" class="form_label">Cross (Yes = robot left red/blue taped area No = stayed in the
                         area)</label>
                     <input type="checkbox" id="cross" checked="checked" class="form_text_input"></input>
@@ -222,7 +155,7 @@
                     <input type="button" onclick="incrementID('auto_high_cone', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="auto_high_cone" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('auto_high_cone', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -232,7 +165,7 @@
                     <input type="button" onclick="incrementID('auto_high_cube', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="auto_high_cube" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('auto_high_cube', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -244,7 +177,7 @@
                     <input type="button" onclick="incrementID('auto_mid_cone', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="auto_mid_cone" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('auto_mid_cone', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -254,7 +187,7 @@
                     <input type="button" onclick="incrementID('auto_mid_cube', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="auto_mid_cube" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('auto_mid_cube', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -266,7 +199,7 @@
                     <input type="button" onclick="incrementID('auto_low_cone', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input><br>
                     <input type="number" min="0" max="40" id="auto_low_cone" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('auto_low_cone', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -276,7 +209,7 @@
                     <input type="button" onclick="incrementID('auto_low_cube', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="auto_low_cube" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('auto_low_cube', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -326,7 +259,7 @@
                     <input type="button" onclick="incrementID('tele_high_cone', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_high_cone" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_high_cone', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -335,7 +268,7 @@
                     <input type="button" onclick="incrementID('tele_high_cone_drop', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_high_cone_drop" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_high_cone_drop', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -344,7 +277,7 @@
                     <input type="button" onclick="incrementID('tele_high_cube', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_high_cube" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_high_cube', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input>
                 </div>
@@ -353,7 +286,7 @@
                     <input type="button" onclick="incrementID('tele_high_cube_drop', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_high_cube_drop" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_high_cube_drop', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -364,7 +297,7 @@
                     <input type="button" onclick="incrementID('tele_mid_cone', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_mid_cone" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_mid_cone', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -373,7 +306,7 @@
                     <input type="button" onclick="incrementID('tele_mid_cone_drop', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_mid_cone_drop" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_mid_cone_drop', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -382,7 +315,7 @@
                     <input type="button" onclick="incrementID('tele_mid_cube', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_mid_cube" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_mid_cube', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -391,7 +324,7 @@
                     <input type="button" onclick="incrementID('tele_mid_cube_drop', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_mid_cube_drop" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_mid_cube_drop', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -402,7 +335,7 @@
                     <input type="button" onclick="incrementID('tele_low_cone', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_low_cone" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_low_cone', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -411,7 +344,7 @@
                     <input type="button" onclick="incrementID('tele_low_cone_drop', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_low_cone_drop" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_low_cone_drop', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -420,7 +353,7 @@
                     <input type="button" onclick="incrementID('tele_low_cube', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                     <input type="number" min="0" max="40" id="tele_low_cube" value="0"
-                        class="form_text_input p-2"></input> <br>
+                        class="form_text_input p-2" readonly></input> <br>
                     <input type="button" onclick="incrementID('tele_low_cube', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
                 </div>
@@ -429,7 +362,7 @@
                     <label for="tele_low_cube_drop" class="form_label">Low Cube <img src="m/cube.png" alt="Cube" height="30px"> Drop ❌ </label><br>
                     <input type="button" onclick="incrementID('tele_low_cube_drop', 1)" value="^"
                         class="btn purple-btn btn-lg p-4"></input> <br>
-                    <input type="number" min="0" max="40" id="tele_low_cube_drop" value="0" class="form_text_input p-2">
+                    <input type="number" min="0" max="40" id="tele_low_cube_drop" value="0" class="form_text_input p-2" readonly>
                     </type></input><br>
                     <input type="button" onclick="incrementID('tele_low_cube_drop', -1)" value="⌄"
                         class="btn purple-btn btn-lg p-4"></input> <br>
