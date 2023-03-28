@@ -172,7 +172,12 @@ function refreshData() {
         // Retrieve
         localStorage.setItem("data", stringVersion);
         document.getElementById("result").innerText = stringVersion;
-        new QRCode(document.getElementById("qrcode"), stringVersion);
+        try {
+            new QRCode(document.getElementById("qrcode"), stringVersion);
+        } catch (error) {
+            console.log(stringVersion)
+        }
+        
         
         setCookie("data", stringVersion, 7)
     } else {
@@ -238,12 +243,13 @@ form.addEventListener('submit', (event) => {
 
     console.log(myList)
 
-    refreshData()
     clearForm(form)
     reloadForm()
 
-    
+    document.getElementById('prematch_heading').scrollIntoView();
     form.preventDefault()
+    refreshData()
+    
 
 });
 
