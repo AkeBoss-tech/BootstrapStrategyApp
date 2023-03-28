@@ -61,6 +61,73 @@ if (localStorage.getItem("match") === null || localStorage.getItem("match") === 
 
 document.getElementById("resultant").text = text
 
+function reloadForm() {
+    if (typeof myList == "undefined") {
+        var myList = [["11/4/2022 8:49:8","AD","DCMP",12,"A",1,"on",1,1,1,1,1,1,1,"L","N","qw"]]
+    }
+    
+    if (typeof text == "undefined") {
+        var text = ""
+    }
+    
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
+    }
+    
+    console.log(text)
+    
+    document.getElementById("saved").innerText = localStorage.getItem("data");
+    // let a = new QRCode(document.getElementById("qrcode"), "www.google.com");
+    
+    
+    if (localStorage.getItem("data") === null) {
+        myList =  [] 
+    } else {
+        myList = JSON.parse(localStorage.getItem("data"))
+        text += localStorage.getItem("data")
+    }
+    
+    if (localStorage.getItem("initials") === null) {
+        localStorage.setItem("initials", "") 
+    } else {
+        document.getElementById("initials").defaultValue = localStorage.getItem("initials");
+        text += localStorage.getItem("initials")
+    }
+    
+    if (localStorage.getItem("tablet") === null || localStorage.getItem("tablet") === "") {
+        localStorage.setItem("tablet", "") 
+    } else {
+        // document.getElementById("tabletId").value = localStorage.getItem("tablet");
+        if (localStorage.getItem("tablet") != "") {
+            document.getElementById(localStorage.getItem("tablet").toLowerCase() + "_button").checked = true
+            text += localStorage.getItem("tablet")
+        }
+    }
+    if (localStorage.getItem("event") === null) {
+        localStorage.setItem("event", "") 
+    } else {
+        document.getElementById("event").defaultValue = localStorage.getItem("event");
+        text += localStorage.getItem("event")
+    }
+    
+    if (localStorage.getItem("match") === null || localStorage.getItem("match") === "") {
+        localStorage.setItem("match", "") 
+    } else {
+        document.getElementById("match_id").value = parseInt(localStorage.getItem("match")) + 1;
+        text += localStorage.getItem("match")
+    }
+    
+    document.getElementById("resultant").text = text
+    
+    makeQRCodes()
+    refreshData()
+}
+
 function incrementID(id_string, num) { 
     var input = document.getElementById(id_string);
     input.value = parseInt(input.value) + num;
@@ -172,9 +239,47 @@ form.addEventListener('submit', (event) => {
     console.log(myList)
 
     refreshData()
+    clearForm(form)
+    reloadForm()
+
     
-    // form.preventDefault()
+    form.preventDefault()
+
 });
+
+function clearForm(form) {
+    form.elements["match_id"].value += 1;
+    form.elements["team_num"].value = 0;
+
+    // Game specefic
+    // auto
+    form.elements["preload"].value = "None";
+    form.elements["cross"].checked = false;
+    form.elements["auto_low_cone"].value = "0";
+    form.elements["auto_mid_cone"].value = "0";
+    form.elements["auto_high_cone"].value = "0";
+    form.elements["auto_low_cube"].value = "0";
+    form.elements["auto_mid_cube"].value = "0";
+    form.elements["auto_high_cube"].value = "0";
+    form.elements["auto_position"].value,
+    
+    form.elements["tele_low_cone"].value = "0";
+    form.elements["tele_mid_cone"].value = "0";
+    form.elements["tele_high_cone"].value = "0";
+    form.elements["tele_low_cube"].value = "0";
+    form.elements["tele_mid_cube"].value = "0";
+    form.elements["tele_high_cube"].value = "0";
+
+    form.elements["tele_low_cone_drop"].value = "0";
+    form.elements["tele_mid_cone_drop"].value = "0";
+    form.elements["tele_high_cone_drop"].value = "0";
+    form.elements["tele_low_cube_drop"].value = "0";
+    form.elements["tele_mid_cube_drop"].value = "0";
+    form.elements["tele_high_cube_drop"].value = "0";
+    form.elements["end_charge_pos"].value = "None";
+    form.elements["notes"].value = "";
+    form.elements["malfunction"].checked = false;
+}
 
 function clearData() {
     localStorage.removeItem("data");
