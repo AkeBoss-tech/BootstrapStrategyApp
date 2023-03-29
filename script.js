@@ -242,7 +242,7 @@ form.addEventListener('submit', (event) => {
         parseInt(form.elements["tele_mid_cube_drop"].value),
         parseInt(form.elements["tele_high_cube_drop"].value),
         form.elements["end_charge_pos"].value,
-        form.elements["notes"].value,
+        form.elements["notes"].value.replace(/,/g, '.'),
         form.elements["malfunction"].checked.toString(),
     ])
 
