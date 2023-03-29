@@ -202,6 +202,11 @@ form.addEventListener('submit', (event) => {
     localStorage.setItem("tablet", form.elements["tabletId"].value) 
     localStorage.setItem("event", form.elements["event"].value)
     localStorage.setItem("match", form.elements["match_id"].value)
+    while (form.elements["notes"].value.includes(",") === true) {
+      let text = form.elements["notes"].value;
+      let result = text.replace(",", " ");
+      form.elements["notes"].value = result;
+    }
     myList.push([
         // things in the beginning 
         datetime,
