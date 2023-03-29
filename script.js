@@ -186,7 +186,13 @@ function refreshData() {
 
     
 }
-
+function removeCommas(index, array) {
+    while (array.elements[index].value.includes(",") === true) {
+        let text = array.elements[index].value;
+        let result = text.replace(",", "");
+        array.elements[index].value = result;
+    }
+}
 refreshData()
 var form = document.forms[0]
 form.addEventListener('submit', (event) => {
@@ -202,11 +208,13 @@ form.addEventListener('submit', (event) => {
     localStorage.setItem("tablet", form.elements["tabletId"].value) 
     localStorage.setItem("event", form.elements["event"].value)
     localStorage.setItem("match", form.elements["match_id"].value)
-    while (form.elements["notes"].value.includes(",") === true) {
-      let text = form.elements["notes"].value;
-      let result = text.replace(",", " ");
-      form.elements["notes"].value = result;
-    }
+    
+    removeCommas("initials", form);
+    removeCommas("event", form);
+    removeCommas("match_id", form);
+    removeCommas("notes", form);
+    removeCommas("team_num", form);
+
     myList.push([
         // things in the beginning 
         datetime,
