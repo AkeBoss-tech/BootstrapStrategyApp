@@ -445,8 +445,9 @@
     <div class="container bg-dark text-white" id="data_container" style="padding-inline-start: 15px;">
         <br>
         <h3 id="data_heading">Data</h3>
-        <p id="saved" style="overflow-wrap: break-word">Qr code below</p>
+        <p id="saved" style="overflow-wrap: break-word; ">Qr code below</p>
         <p id="result" style="overflow-wrap: break-word">Qr code below</p>
+        <button id="copyButton" class="btn btn-info">Copy</button>
         <p id="resultant" style="overflow-wrap: break-word">Qr code below</p>
         <div class="centered">
             <button type="button" onClick="document.getElementById('prematch_heading').scrollIntoView();"
@@ -456,14 +457,9 @@
         <div class="centered">
             <button onclick="clearData()" class="btn btn-danger">Clear</button>
         </div>
-        <br><br style="clear: both;"><br>
-        <p>Large QR Code</p>
-
-        <div id="qrcode"></div>
-        <br>
+        <br><br style="clear: both;">
         <br>
         <p>Individual QR Codes</p>
-        <br>
         <div id="qrList"></div>
     </div>
     <script src="script.js"></script>

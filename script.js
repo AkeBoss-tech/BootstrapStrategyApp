@@ -156,11 +156,18 @@ function makeQRCodes() {
 
 makeQRCodes()
 
+document.getElementById('copyButton').addEventListener('click', function() {
+    var text = document.getElementById('result').innerText;
+    navigator.clipboard.writeText(text);
+});
+
 function refreshData() {
     // Check browser support
     if (typeof(Storage) !== "undefined") {
         // Store
         let stringVersion = JSON.stringify(myList)
+        // get rid of all the appearances of  " in the string
+        stringVersion = stringVersion.replaceAll('"', '');
         /* let totalString = ""
         for (const stringData of myList) {
             let b = JSON.stringify(stringData).slice(1, -1)
